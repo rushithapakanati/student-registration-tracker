@@ -215,7 +215,7 @@ def delete_db():
 
 # Student login
 @app.route("/student_search", methods=["POST"])
-def student_login():
+def student_search():
     idno = request.form.get("idno")
 
     conn = get_db()
