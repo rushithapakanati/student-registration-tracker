@@ -214,7 +214,7 @@ def delete_db():
     return redirect(url_for("admin"))
 
 # Student login
-@app.route("/student_login", methods=["POST"])
+@app.route("/student_search", methods=["POST"])
 def student_login():
     idno = request.form.get("idno")
 
@@ -227,7 +227,7 @@ def student_login():
     if rows:
         return render_template("student.html", student_data=rows, student_id=idno)
     else:
-        flash("No data found for given ID Number", "error")
+        flash("No Registration done for given ID Number", "error")
         return redirect(url_for("index"))
 
 # Run Flask
