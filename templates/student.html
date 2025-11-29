@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Student Dashboard</title>
+    <title>Registration Details</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -27,7 +27,7 @@
             margin-bottom: 10px;
         }
         .container {
-            max-width: 1200px;
+            max-width: 1300px;
             width: 90%;
             margin: 30px auto;
             flex: 1;
@@ -94,6 +94,10 @@
         a.logout:hover {
             background-color: #ff3333;
         }
+        .serial-no {
+            background-color: #f0f0f0;
+            font-weight: bold;
+        }
     </style>
 </head>
 <body>
@@ -119,6 +123,7 @@
         {% if student_data %}
         <table>
             <tr>
+                <th>S.No</th>
                 <th>Branch</th>
                 <th>Year</th>
                 <th>Semester</th>
@@ -129,6 +134,7 @@
             </tr>
             {% for s in student_data %}
             <tr>
+                <td class="serial-no">{{ loop.index }}</td>
                 <td>{{ s.branch if s.branch else '-' }}</td>
                 <td>{{ s.year if s.year else '-' }}</td>
                 <td>{{ s.semester if s.semester else '-' }}</td>
@@ -146,7 +152,7 @@
         {% endif %}
 
         <center>
-            <a class="back" href="{{ url_for('index') }}">Back</a>
+            <a class="logout" href="{{ url_for('index') }}">Back</a>
         </center>
     </div>
 </body>
