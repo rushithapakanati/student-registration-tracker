@@ -86,7 +86,7 @@
     <a href="{{ url_for('admin_login_page') }}" class="admin-btn">Admin Login</a>
 
     <div class="login-container">
-        <h2>Student Login</h2>
+        <h2>Student Registration Portal</h2>
         
         <!-- Flash messages at the top -->
         {% with messages = get_flashed_messages(with_categories=true) %}
@@ -99,7 +99,7 @@
 
         <form action="{{ url_for('student_search') }}" method="POST">
             <input type="text" name="idno" placeholder="Enter ID No" required>
-            <button type="submit">Search</button>
+            <button type="submit">Check Registration</button>
         </form>
     </div>
 </body>
